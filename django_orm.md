@@ -71,11 +71,11 @@ class Widget(models.Model):
     number = models.IntegerField()
     ordered_on = models.DateTimeField()
     
-    def save(self):
+    def save(self, *args, **kwargs):
         if self.name == "Paul":
             return False
         else:
-            super(Widget,self).save()
+            super(Widget,self).save(*args, **kwargs)
             return True
 ```
 
