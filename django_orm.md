@@ -93,7 +93,7 @@ w4.save()
 # This returns False to let us know it wasn't saved... we could replace this with a dictionary of errors if we like
 
 # if we change the name we will be allowed to save the Widget
-w3.name = "Anne"
+w4.name = "Anne"
 
 w4.save()
 # This returns True, we could just as easily return self.id if we would prefer to have that returned
