@@ -1,4 +1,4 @@
-# Simplified Django ORM
+## Django ORM
 
 ```python
 # inside of models.py
@@ -43,6 +43,9 @@ w1.save()
 w2 = Widget(None, 'Tim', 4, "2018-07-07")
 w2.save()
 
+# We can combine the steps of making a widget and saving them with the create method
+w3 = widget.create(name="Dan", number=5, ordered_on="2018-07-07")
+
 # we need to provide the value None for the id if we don't use keyword value pairs
 
 # we can see what is in the Widget table with 
@@ -52,7 +55,7 @@ widget.all()
 """
 which outputs:
 
-<QuerySet [<Widget: Widget object (1)>, <Widget: Widget object (2)>]>
+<QuerySet [<Widget: Widget object (1)>, <Widget: Widget object (2)>, <Widget: Widget object (3)>]>
 """
 
 ```
@@ -82,17 +85,17 @@ class Widget(models.Model):
 ```python
 # back in the python shell
 
-w3 = Widget(name="Paul", number=6, ordered_on="2018-07-07")
+w4 = Widget(name="Paul", number=6, ordered_on="2018-07-07")
 
 # when we go to save, it will run the save method with our new check
 
-w3.save()
+w4.save()
 # This returns False to let us know it wasn't saved... we could replace this with a dictionary of errors if we like
 
 # if we change the name we will be allowed to save the Widget
 w3.name = "Anne"
 
-w3.save()
+w4.save()
 # This returns True, we could just as easily return self.id if we would prefer to have that returned
 ```
 
