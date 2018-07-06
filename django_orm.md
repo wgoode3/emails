@@ -39,17 +39,14 @@ which outputs:
 w1.save()
 
 # Alternatively we could also create a Widget like this
-
+# we need to provide the value None for the id if we don't use keyword value pairs
 w2 = Widget(None, 'Tim', 4, "2018-07-07")
 w2.save()
 
 # We can combine the steps of making a widget and saving them with the create method
 w3 = widget.create(name="Dan", number=5, ordered_on="2018-07-07")
 
-# we need to provide the value None for the id if we don't use keyword value pairs
-
 # we can see what is in the Widget table with 
-
 widget.all()
 
 """
